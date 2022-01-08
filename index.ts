@@ -53,4 +53,6 @@ model.add(tf.layers.dense({units:10, activation:'softmax'}))
 // Functional Model API
 const input = tf.input({shape:[784]})
 const dense1 = tf.layers.dense({inputShape: [784], units:16, activation:'relu'}).apply(input);
-const dense2 = tf.layers.dense({units:10, activation:'softmax'}).apply(dense2);
+const dense2 = tf.layers.dense({units:10, activation:'softmax'}).apply(dense1);
+const model = tf.model({inputs:input, outputs:dense2});
+
